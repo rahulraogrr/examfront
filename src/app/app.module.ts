@@ -10,7 +10,10 @@ import { MatDividerModule } from '@angular/material/divider';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { RegistrationComponent } from './pages/registration/registration.component';
-import { LoginComponent } from './pages/login/login.component'
+import { LoginComponent } from './pages/login/login.component';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,8 @@ import { LoginComponent } from './pages/login/login.component'
   ],
   imports: [
     BrowserModule,AppRoutingModule,BrowserAnimationsModule,MatButtonModule,
-    MatIconModule,MatDividerModule
+    MatIconModule,MatDividerModule, MatInputModule, MatFormFieldModule, FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

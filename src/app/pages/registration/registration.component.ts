@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { User } from '../../models/user.model';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-registration',
@@ -9,7 +10,10 @@ import { User } from '../../models/user.model';
 })
 export class RegistrationComponent implements OnInit {
 
-  hide = true;
+  constructor(
+    private userService: UserService
+  ) { }
+
   email = new FormControl('', [Validators.required, Validators.email]);
   user = new User('','','','','','','');
 
@@ -24,9 +28,22 @@ export class RegistrationComponent implements OnInit {
   registerUser(){
     alert('Registration Started');
     console.log(this.user);
-  }
 
-  constructor() { }
+    //create user
+    this.userService.createUser(this.user).subscribe(
+        (data)=>{
+          //Success
+          console.log(data);
+          alert(data);
+        },
+        (error)=>{
+          //Error
+          console.log(error);
+          alert(error);
+        }
+    );
+
+  }
 
   ngOnInit(): void {
   }

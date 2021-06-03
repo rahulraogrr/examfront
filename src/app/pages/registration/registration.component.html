@@ -3,10 +3,12 @@
         <div class="row" style="margin-top: 20px;">
             <div class="col-md-6 offset-md-3">
                 <div class="container text-center">
+                    <!--
                     <img src="../../../assets/IMG_4872.png" alt="TEE 1104 UNION" height="100">
+                    -->
                 </div>
                 <h1 class="text-center">Member Registration Form</h1>
-                {{user | json}}
+                <!-- {{user | json}} -->
                 <form (ngSubmit)="registerUser()">
                     <mat-form-field class="full-width" appearance="outline">
                         <mat-label>Username</mat-label>
@@ -16,20 +18,17 @@
                             matInput 
                             placeholder="Enter your username"
                         />
-                        <mat-icon matSuffix>account_circle</mat-icon>
                     </mat-form-field>
 
                     <mat-form-field class="full-width" appearance="outline">
                         <mat-label>Password</mat-label>
                         <input 
-                           [(ngModel)] = user.password
-                            name="password"
-                            matInput [type]="hide ? 'password' : 'text'"
+                            [(ngModel)] = user.password
+                            name="password" 
+                            matInput 
+                            placeholder="Enter your password"
+                            type="password"
                         />
-                        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
-                            [attr.aria-pressed]="hide">
-                            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-                        </button>
                     </mat-form-field>
 
                     <mat-form-field class="full-width" appearance="outline">

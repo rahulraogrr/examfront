@@ -15,6 +15,10 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatCardModule } from '@angular/material/card';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatListModule } from '@angular/material/list';
 
 @NgModule({
   declarations: [
@@ -27,7 +31,8 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,AppRoutingModule,BrowserAnimationsModule,MatButtonModule,
     MatIconModule,MatDividerModule, MatInputModule, MatFormFieldModule, FormsModule,
-    ReactiveFormsModule, HttpClientModule
+    ReactiveFormsModule, HttpClientModule, MatSnackBarModule, MatCardModule , MatToolbarModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

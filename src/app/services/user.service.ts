@@ -18,8 +18,6 @@ export class UserService {
    * @returns 
    */
   public createUser(user:any){
-    console.log('Base URL : '+baseURL)
     return this.httpClient.post(baseURL+'/user',user);
   }
-
 }

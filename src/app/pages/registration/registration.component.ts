@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { User } from '../../models/user.model';
 import { UserService } from '../../services/user.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-registration',
@@ -26,20 +27,15 @@ export class RegistrationComponent implements OnInit {
   }
 
   registerUser(){
-    alert('Registration Started');
-    console.log(this.user);
 
     //create user
     this.userService.createUser(this.user).subscribe(
-        (data)=>{
-          //Success
-          console.log(data);
-          alert(data);
+        (data: any)=>{
+          Swal.fire('Member Successfully Registered', 
+          'Please Note Member ID for future reference : '+data.id,'success');
         },
         (error)=>{
-          //Error
-          console.log(error);
-          alert(error);
+          Swal.fire('Member Registration Failed','','error');
         }
     );
 
